@@ -2,9 +2,6 @@
 Данная лабораторная работа посвещена изучению систем автоматизации развёртывания и управления приложениями на примере Docker
 
 # Task 1
-![Снимок экрана от 2023-04-15 16-22-52](https://user-images.githubusercontent.com/125737299/232237200-bf3e9892-836d-4d1a-ae8e-73c6afe9488f.png)
-
-
 
 Let's create the executable files for this lab. They will be in separate folders, which will then be linked using `CMakeLists.txt`:
 
@@ -75,8 +72,6 @@ int main(int argc, char* argv[])
 }
 ```
 
-![Снимок экрана от 2023-04-15 16-33-39](https://user-images.githubusercontent.com/125737299/232237208-5f9c6be7-1577-4249-8248-4f97afbe294c.png)
-
 
 Also we make the `logs\` directory, where we have a `.txt` file
 
@@ -130,7 +125,6 @@ install(TARGETS print
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/ DESTINATION include)
 install(EXPORT print-config DESTINATION cmake)
 ```
-![Снимок экрана от 2023-04-15 16-34-56](https://user-images.githubusercontent.com/125737299/232237220-86470c65-e9a3-4a5e-b3d5-949a9dc74df4.png)
 
 
 
@@ -161,7 +155,6 @@ $ git add .
 $ git commit -m "Pushing project"
 $ git push origin master
 ```
-![Снимок экрана от 2023-04-15 16-52-45](https://user-images.githubusercontent.com/125737299/232237234-6e25e866-615a-422c-994e-4b4c94cc07c4.png)
 
 
 
@@ -182,7 +175,6 @@ jobs:
         run: docker build -t logger .
 ```
 
-![Снимок экрана от 2023-04-15 16-52-08](https://user-images.githubusercontent.com/125737299/232237228-6fa27938-757a-41a2-902e-3bb175051f87.png)
 
 
 Now we will test our project in local repositories
@@ -199,8 +191,6 @@ $ sudo docker run -it -v "$(pwd)/logs/:/home/lab-07/logs/" logger
 $ sudo docker inspect logger
 $ cat logs/log.txt
 ```
-![Снимок экрана от 2023-04-15 18-18-10](https://user-images.githubusercontent.com/125737299/232237248-8dd0f42f-b6c2-4b7d-8e70-98493532ebdc.png)
-![Снимок экрана от 2023-04-15 18-18-23](https://user-images.githubusercontent.com/125737299/232237259-bb6f1b5d-85f3-4706-af08-4a88e5e129d8.png)
 
 
 In `log.txt`will a appear text 
